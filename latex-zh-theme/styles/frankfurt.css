@@ -1,0 +1,85 @@
+html {
+	font-size: 12pt;
+}
+
+.slidev-page,
+.slidev-layout {
+
+	overflow: hidden;
+
+	html.dark & {
+		background: #222;
+	}
+
+	h1 {
+		@apply text-white shadow-md;
+		font-size: 2rem;
+		background: #3333B3;
+		margin-top: -4rem;
+		margin-bottom: 2rem;
+		margin-left: -5.5rem;
+		margin-right: -5.5rem;
+		padding: 5.5rem 3rem 1rem 3rem;
+		width: 1000%;
+		--un-shadow-opacity: 1;
+		/* --un-shadow-color: #202020c5; */
+		--un-shadow-color: #3333b300;
+	}
+
+	&.center,
+	&.cover,
+	&.intro {
+		h1 {
+			@apply shadow-md shadow-gray;
+			
+			font-size: 2rem;
+			display: inline-block;
+			padding: 1rem 5rem;
+			border-radius: 1rem;
+			width: unset;
+			margin-top: unset;
+			margin-left: unset;
+			margin-right: unset;
+
+			html.dark & {
+				--un-shadow-opacity: 1;
+				--un-shadow-color: #3333B3;
+			}
+		}
+	}
+
+	.item,
+	blockquote {
+		font-family: 'Times New Roman', 'Kaiti';
+	}
+
+	p {
+		text-indent: 2em;
+	}
+}
+
+.item {
+	@apply shadow-md shadow-gray;
+	margin: 1rem 0;
+	border-radius: .5rem;
+	overflow: hidden;
+
+	html.dark & {
+		--un-shadow-color: #111;
+	}
+
+	header {
+		padding: 0.5rem;
+		color: white;
+		background: #262686;
+	}
+
+	main {
+		padding: 0.5rem;
+		background: #E9E9F3;
+
+		html.dark & {
+			background: #444;
+		}
+	}
+}
