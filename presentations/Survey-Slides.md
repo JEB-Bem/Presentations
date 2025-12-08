@@ -27,12 +27,13 @@ hideInToc: true
 
 # The Security of Immutable Smart Contracts: A Systematic Survey of Vulnerabilities
 
-## 蒋&nbsp;杰
+### 蒋&nbsp;杰
 
-## 24 网络空间安全
+24 网络空间安全  
+jiangjie@stu.ouc.edu.cn
 <br/>
 
-#### Nov 24, 2025
+Nov 24, 2025
 
 <style>
   h2 {
@@ -42,6 +43,8 @@ hideInToc: true
 
 <!--
 首先需要声明，我们并不鼓励、提倡任何涉及加密货币的行为，但智能合约安全领域的研究仍然非常有价值，因此今天我就智能合约安全领域进行文献综述。
+
+Good morning everyone, I'm Jiang Jie from Cyberspace Security.  In this report, i will present a systematic survey on the security of immutable smart contracts.
 
 First of all, it must be stated that we do not encourage or promote any activities involving cryptocurrencies.
 -->
@@ -68,6 +71,10 @@ hideInToc: true
 
 # Introduction
 
+<!--
+First section is Introduction.
+-->
+
 ---
 
 # Introduction
@@ -93,14 +100,44 @@ flowchart LR
 The Smart Contracts are based on the Blockchain, actually they are several programs running on the nodes in distributed network. They are programs, so there are vulnerabilities in the programs.
 
 <!--
-On October 31, 2008, Satoshi Nakamoto published a paper on Bitcoin. The following year, Bitcoin was officially introduced, marking the birth of a decentralized financial system.
-So, what exactly is Bitcoin? And what is blockchain?
-Bitcoin is…
-Blockchain is…
-2008年10月31日，中本聪发表了一篇关于比特币的论文，次年，比特币正式问世，去中心化的金融体系正式诞生。
-那么，什么是比特币呢？什么是区块链呢？
-比特币是...
-区块链是...
+Most of us are familiar with bitcoin.
+
+But what exactly is blockchain?
+
+=== click 1,2 ===
+
+This is a simple explanation of blockchain and bitcoin. Among the core concepts of blockchain, 'decentralization' is important. More specifically, this refers to its ...
+
+And all of them are based on a important mechanism —— consensus mechanism which we will mention later.
+
+
+==== click ====
+
+Now refocus on our topic —— Smart Contracts, they are ...
+-->
+
+---
+
+# Introduction
+
+Smart contracts are essentially programs which are immutable by design.
+
+While immutability is necessary for trustlessness, decentralization, and security of smart contracts, it may be a drawback in certain cases. For instance, immutable code can make it impossible for developers to fix vulnerable contracts \[5\].
+
+<v-click>
+Howerver, Ethereum has now proposed some limited upgrade mechanisms to patch vulnerabilities while maintaing its "immutability".
+
+**But this is a balance between security and consensus!**
+</v-click>
+
+<!--
+Smart contracts are essentially programs. While many of us are familiar with programming, their most critical distinction is the 'deploy-once, modify-never' nature. This immutability is a fundamental principle enforced by the underlying consensus mechanism. In simple terms, you can't deny or modify what you did.
+
+==== click ====
+
+However there are some drawbacks expained by the text.
+
+ The communities are trying solving it, but remember, it's always a balance between security and consensus. This is big conflict in the Community, and we will mention later.
 -->
 
 ---
@@ -122,7 +159,7 @@ hideInToc: true
 In simple terms, a blockchain records messages broadcast to a distributed network, forming an immutable chain of blocks. Any attempt to tamper with a block in the middle would break the linkage of all subsequent blocks, making modification immediately detectable.
 
 <!--
-简单来说，区块链将广播到分布式网络中的消息记录下来，形成一个不可修改的块链，一旦试图篡改中间区块，都会导致后续区块的链条断掉。
+We have give a simple explain early so we just give a overview of the definition gived by wikipedia, and focus on the constructure of the blockchain.
 -->
 
 ---
@@ -146,7 +183,13 @@ In simple terms, a blockchain records messages broadcast to a distributed networ
 Each block’s `Hash Of Previous Block Header` stores the hash of the previous block’s `Block Header`, and together with the PoS/PoW mechanism, ensures that the chain cannot be tampered with.
 
 <!--
-<v-click>每个区块的 `Hash Of Previous Block Header` 都储存了上一个区块的 `Block Header` 的 `Hash`，与 PoS/PoW 机制共同保证了链不可篡改。</v-click>
+This is a important point. The foundation of the linkability of blockchain is the hash in the block headers.
+
+=== click ===
+
+Meanwhile, the uniqueness of the branch is guaranteed by PoW , PoS and other consensus mechanisms.
+
+It's a important foundation of Blockchain.
 -->
 
 ---
@@ -165,6 +208,12 @@ Each block’s `Hash Of Previous Block Header` stores the hash of the previous b
     - Irreversibility
     - Governance Challenges (e.g. money laundering)
 
+<!--
+We have mentioned the advantages of the Blockchain but how about the Disadvantages?
+
+we will disuss more later.
+-->
+
 ---
 
 # Ethereum
@@ -175,9 +224,19 @@ The idea behind Ethereum was simple. While Bitcoin let you send and receive digi
 
 This is the most significant feature in contrast to Bitcoin. And another feature is it use PoS, is how all computers agreed on who owns what. In addition, Ethereum use **ETH** as its native cryptocurrency.
 
-<Item title="Proof of stake(PoS)">
+<Item title="Proof of Stake(PoS)">
 Instead of mathematical puzzles, validators lock their ETH as a security deposit to earn the right to process transactions. If they do it correctly, they earn ETH. If they cheat, they lose some of their stake.
 </Item>
+
+<!--
+Now we must learn the foundamental concepts of the Ethereum.
+
+=== click ===
+
+When we talk about Smart Contracts, we actually based on the Ethereum. The concept of Smart Contracts is the most significant feature in contrast to Bitcoin.
+
+And another distinction is PoS. This is a simple definition of PoS.
+-->
 
 ---
 
@@ -192,57 +251,11 @@ But why are they called "contracts"?
 - Automatic execution
 
 <!--
-着重解释不可撤回
-我们是人类，人类不可避免的会犯错误，程序也不可避免的会有 Vulnerabilities.
-We are human, and humans inevitably make mistakes. Likewise, programs are also prone to vulnerabilities.
+We have mentioned the immutablity. Because of the feature.Smart Contracts are used as convention contracts, law, automatic executions etc (etcetera).
+
+==== click ====
+Because Smart Contracts are used in this imoprtant domains, its secure problem is a significant issue.
 -->
-
----
-
-# The Computer World
-
-<div grid="~ cols-2 gap-2">
-
-<!--上个月 Amazon Web Services 崩了...-->
-Last month, Amazon Web Services went down…
-
-![20251124-c5a461ab28f147fa.png](./images/20251124-c5a461ab28f147fa.png){width=250px}
-
-</div>
-
----
-
-# The Computer World
-
-<div grid="~ cols-2 gap-2">
-
-A few days ago, Cloudflare went down again…  
-And even platforms like Zhihu, CSDN, Bilibili, and NetEase Cloud Music have all experienced similar outages in recent years…
-
-<!--
-前几天 Cloudflare 又崩了...  
-甚至知乎、CSDN、Bilibili、网易云等公司/网站近些年都发生过类似的事情...
--->
-
-![20251124-eb1e283c5fd79613.png](./images/20251124-eb1e283c5fd79613.png){width=250px}
-
-</div>
-
----
-
-# The Computer World (In My Opinion)
-
-<div grid="~ cols-2 gap-2">
-
-Perhaps this is what the real world of computing looks like—an enormous tower where every layer is critically important, yet patched and repaired over time (this is the prompt I used to ask ChatGPT to generate).
-
-<!--
-或许这才是真正的计算机世界（这是我让 ChatGPT 生成的，一个每一层都极其重要，但充满补丁的计算机大厦）：
--->
-
-![](./images/20251123-few13b0n2vb4g3n1.png) {width=230px}
-
-</div>
 
 ---
 section: Common Vul.
@@ -255,8 +268,6 @@ layout: center
 
 # Common Vulnerabilities in Smart Contracts
 
-> According to SlowMist Hacked, as of the end of June, there were 187 blockchain security incidents across the network since we entered 2022, while the losses suffered amounted to $1.976 billion. Out of the 19,366 Ethereum contracts that are now in existence, Liao et al. (2022) discovered that 8,833 of them are insecure, indicating that the vulnerability percentage is still high and that the security vulnerabilities in these smart contracts might lead to financial losses.
-
 Main Security vulnerabilities:
 
 - Solidity
@@ -264,7 +275,7 @@ Main Security vulnerabilities:
 - Blockchain
 
 <!--
-此处需要举一些例子
+In the interest of time, we skip over this section but give a overview.
 -->
 
 ---
@@ -281,6 +292,10 @@ layout: center
 With the rapid development of large language models (LLMs), artificial intelligence has introduced significant changes to the field of smart contract security. In particular, many recent studies incorporate LLMs into vulnerability discovery, demonstrating strong capabilities in code understanding and automated auditing. As shown in prior work \[3\], LLMs perform well in analyzing contract logic and identifying common security flaws.
 
 Research on smart contract security spans a broad spectrum beyond LLM-based analysis. Early work focuses on static analysis, symbolic execution, and formal verification to detect vulnerabilities in contract logic. Tools such as Slither, Mythril, and Certora Prover provide foundational approaches for identifying reentrancy, arithmetic bugs, and access-control issues.
+
+<!--
+这一节
+-->
 
 ---
 section: Real Attacks
@@ -352,6 +367,61 @@ As mentioned earlier, certain attacks are not purely financially motivated; they
 <v-click><p>Both smart contracts and their underlying blockchain infrastructure still have a long way to go before reaching maturity.</p></v-click>
 
 ---
+
+# Statistics
+
+According to statistics from SlowMist Hacked, as of January 2025, the total number of recorded blockchain attacks has reached 1,972, among which 336 are related to smart contracts, accounting for approximately 17% of all incidents.
+
+![img.png](./public/20251130-57ae0eaf3a871344.png){width=600px}
+
+---
+
+# The Computer World
+
+<div grid="~ cols-2 gap-2">
+
+<!--上个月 Amazon Web Services 崩了...-->
+Last month, Amazon Web Services went down…
+
+![20251124-c5a461ab28f147fa.png](./images/20251124-c5a461ab28f147fa.png){width=250px}
+
+</div>
+
+---
+
+# The Computer World
+
+<div grid="~ cols-2 gap-2">
+
+A few days ago, Cloudflare went down again…  
+And even platforms like Zhihu, CSDN, Bilibili, and NetEase Cloud Music have all experienced similar outages in recent years…
+
+<!--
+前几天 Cloudflare 又崩了...  
+甚至知乎、CSDN、Bilibili、网易云等公司/网站近些年都发生过类似的事情...
+-->
+
+![20251124-eb1e283c5fd79613.png](./images/20251124-eb1e283c5fd79613.png){width=250px}
+
+</div>
+
+---
+
+# The Computer World (In My Opinion)
+
+<div grid="~ cols-2 gap-2">
+
+Perhaps this is what the real world of computing looks like—an enormous tower where every layer is critically important, yet patched and repaired over time (this is the prompt I used to ask ChatGPT to generate).
+
+<!--
+或许这才是真正的计算机世界（这是我让 ChatGPT 生成的，一个每一层都极其重要，但充满补丁的计算机大厦）：
+-->
+
+![](./images/20251123-few13b0n2vb4g3n1.png) {width=230px}
+
+</div>
+
+---
 section: End
 layout: center
 ---
@@ -367,4 +437,5 @@ section: References
 \[1\] Guangfu Wu, HaiPing Wang, Xin Lai, Mengmeng Wang, Daojing He and Sammy Chan. A comprehensive survey of smart contract security: State of the art and research directions. In Journal of Network and Computer Applications, vol. 226, 2024, Article 103882.  
 \[2\] Huaqun Guo and Xingjie Yu. A Survey on Blockchain Technology and Its Security. In Blockchain: Research and Applications, 3(2), 100067, 2022  
 \[3\] Ye Liu, Yue Xue, Daoyuan Wu, Yuqiang Sun, Yi Li, Miaolei Shi and Yang Liu. PropertyGPT: LLM-driven Formal Verification of Smart Contracts through Retrieval-Augmented Property Generation. In Proceedings of the NDSS Symposium 2025 (NDSS ’25), 2025  
-\[4\] Nicola Ruaro, Fabio Gritti, Dongyu Meng, and Robert McLaughlin, Ilya Grishchenko, Christopher Kruegel and Giovanni Vigna. Approve Once, Regret Forever: On the Exploitation of Ethereum's Approve-TransferFrom Ecosystem. In Proceedings of the USENIX Security Symposium 2025 (USENIX Security ’25), 2025
+\[4\] Nicola Ruaro, Fabio Gritti, Dongyu Meng, and Robert McLaughlin, Ilya Grishchenko, Christopher Kruegel and Giovanni Vigna. Approve Once, Regret Forever: On the Exploitation of Ethereum's Approve-TransferFrom Ecosystem. In Proceedings of the USENIX Security Symposium 2025 (USENIX Security ’25), 2025  
+\[5\] Ethereum.org. Upgrading Smart Contracts. Ethereum. Accessed Dec 1, 2025
