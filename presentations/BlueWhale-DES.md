@@ -99,8 +99,10 @@ backgroundSize: 80%
 - Left Block 和 Right Block 都是 32 bits
 - Feistel Network 是可逆的
 
+[\[edit: 2026-04-20\] 原图示有误，现已更新]{style="color:#f37f7eaa"}
+
 <div class="absolute right-40px bottom-20px">
-<img src="/20260419-6b3208553e028ba9.png" width=390px/>
+<img src="/20260420-9e76f13ba8c63467.png" width=390px/>
 </div>
 
 ---
@@ -177,9 +179,9 @@ uv run python -m unittest -k init
 
 <SlidevVideo controls>
   <!-- Anything that can go in an HTML video element. -->
-  <source src="/BlueWhale培训-DMS.mp4" type="video/mp4" />
+  <source src="http://chrjeb.cn/presentations/DMS/BlueWhale培训-DMS.mp4" type="video/mp4" />
   <p>
     Your browser does not support videos. You may download it
-    <a href="/BlueWhale培训-DMS.mp4">here</a>.
+    <a href="http://chrjeb.cn/presentations/DMS/BlueWhale培训-DMS.mp4">here</a>.
   </p>
 </SlidevVideo>
