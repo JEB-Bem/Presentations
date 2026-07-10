@@ -1,0 +1,1 @@
+import{f as a,o as t,e as o,t as n,j as i,g as r,i as l}from"./modules/vue-C5HeqGqN.js";import{u as m}from"./slidev/context-kaLIXUak.js";const c={class:"item"},d={key:0},p=a({__name:"Item",props:{title:{}},setup(e){return m(),(s,u)=>(t(),o("div",c,[e.title?(t(),o("header",d,n(e.title),1)):i("v-if",!0),r("main",null,[l(s.$slots,"default")])]))}});export{p as _};
